@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Conductores - FlotaTaxi</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>FlotaTaxi</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="vehiculos.html"><i class="fas fa-car"></i> Vehículos</a></li>
+                <li><a href="#" class="active"><i class="fas fa-users"></i> Conductores</a></li>
+                <li><a href="mantenimiento.html"><i class="fas fa-wrench"></i> Mantenimiento</a></li>
+                <li><a href="reportes.html"><i class="fas fa-chart-bar"></i> Reportes</a></li>
+                <li><a href="configuracion.html"><i class="fas fa-cog"></i> Configuración</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar conductor...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="user-info">
+                    <span class="notifications">
+                        <i class="fas fa-bell"></i>
+                    </span>
+                    <span class="user">
+                        <i class="fas fa-user-circle"></i>
+                        Admin
+                    </span>
+                </div>
+            </header>
+
+            <div class="drivers-container">
+                <!-- Botones de acción -->
+                <div class="action-buttons">
+                    <button class="btn-primary">
+                        <i class="fas fa-plus"></i> Agregar Conductor
+                    </button>
+                    <button class="btn-secondary">
+                        <i class="fas fa-file-export"></i> Exportar Lista
+                    </button>
+                </div>
+
+                <!-- Grid de conductores -->
+                <div class="drivers-grid">
+                    <!-- Tarjeta de conductor -->
+                    <div class="driver-card">
+                        <div class="driver-header">
+                            <i class="fas fa-user-circle driver-avatar"></i>
+                            <div class="driver-status active">Activo</div>
+                        </div>
+                        <div class="driver-info">
+                            <h3>Juan Pérez</h3>
+                            <p class="driver-id">ID: DRV001</p>
+                            <div class="info-row">
+                                <i class="fas fa-car"></i>
+                                <span>TX001 - Toyota Corolla</span>
+                            </div>
+                            <div class="info-row">
+                                <i class="fas fa-phone"></i>
+                                <span>+1 234 567 890</span>
+                            </div>
+                            <div class="info-row">
+                                <i class="fas fa-envelope"></i>
+                                <span>juan.perez@email.com</span>
+                            </div>
+                        </div>
+                        <div class="driver-stats">
+                            <div class="stat">
+                                <span class="stat-value">4.8</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">523</span>
+                                <span class="stat-label">Viajes</span>
+                            </div>
+                        </div>
+                        <div class="driver-actions">
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                            <button class="btn-icon"><i class="fas fa-history"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Más tarjetas de conductor -->
+                    <div class="driver-card">
+                        <div class="driver-header">
+                            <i class="fas fa-user-circle driver-avatar"></i>
+                            <div class="driver-status inactive">Inactivo</div>
+                        </div>
+                        <div class="driver-info">
+                            <h3>María García</h3>
+                            <p class="driver-id">ID: DRV002</p>
+                            <div class="info-row">
+                                <i class="fas fa-car"></i>
+                                <span>TX002 - Hyundai Elantra</span>
+                            </div>
+                            <div class="info-row">
+                                <i class="fas fa-phone"></i>
+                                <span>+1 234 567 891</span>
+                            </div>
+                            <div class="info-row">
+                                <i class="fas fa-envelope"></i>
+                                <span>maria.garcia@email.com</span>
+                            </div>
+                        </div>
+                        <div class="driver-stats">
+                            <div class="stat">
+                                <span class="stat-value">4.9</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">412</span>
+                                <span class="stat-label">Viajes</span>
+                            </div>
+                        </div>
+                        <div class="driver-actions">
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                            <button class="btn-icon"><i class="fas fa-history"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Más tarjetas de conductor -->
+                    <div class="driver-card">
+                        <div class="driver-header">
+                            <i class="fas fa-user-circle driver-avatar"></i>
+                            <div class="driver-status vacation">Vacaciones</div>
+                        </div>
+                        <div class="driver-info">
+                            <h3>Carlos Rodríguez</h3>
+                            <p class="driver-id">ID: DRV003</p>
+                            <div class="info-row">
+                                <i class="fas fa-car"></i>
+                                <span>TX003 - Nissan Sentra</span>
+                            </div>
+                            <div class="info-row">
+                                <i class="fas fa-phone"></i>
+                                <span>+1 234 567 892</span>
+                            </div>
+                            <div class="info-row">
+                                <i class="fas fa-envelope"></i>
+                                <span>carlos.rodriguez@email.com</span>
+                            </div>
+                        </div>
+                        <div class="driver-stats">
+                            <div class="stat">
+                                <span class="stat-value">4.7</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">378</span>
+                                <span class="stat-label">Viajes</span>
+                            </div>
+                        </div>
+                        <div class="driver-actions">
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                            <button class="btn-icon"><i class="fas fa-history"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paginación -->
+                <div class="pagination">
+                    <button class="btn-page"><i class="fas fa-chevron-left"></i></button>
+                    <button class="btn-page active">1</button>
+                    <button class="btn-page">2</button>
+                    <button class="btn-page">3</button>
+                    <button class="btn-page"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <style>
+        /* Estilos específicos para la página de conductores */
+        .drivers-container {
+            padding: 1rem;
+        }
+
+        .drivers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .driver-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+
+        .driver-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .driver-avatar {
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+
+        .driver-status {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .driver-status.active {
+            background-color: #e1f7e1;
+            color: #2ecc71;
+        }
+
+        .driver-status.inactive {
+            background-color: #ffe1e1;
+            color: #e74c3c;
+        }
+
+        .driver-status.vacation {
+            background-color: #e1f5fe;
+            color: #03a9f4;
+        }
+
+        .driver-info {
+            margin-bottom: 1.5rem;
+        }
+
+        .driver-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .driver-id {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .info-row i {
+            width: 20px;
+            color: var(--secondary-color);
+        }
+
+        .driver-stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 1rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .driver-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .drivers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html> 
