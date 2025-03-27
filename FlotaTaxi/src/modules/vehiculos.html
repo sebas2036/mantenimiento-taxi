@@ -43,9 +43,20 @@
             </header>
 
             <div class="vehicles-container">
+                <!-- Resumen estadístico -->
+                <div class="stats-summary">
+                    <div class="stat-card">
+                        <i class="fas fa-car"></i>
+                        <div class="stat-info">
+                            <h3>Total Vehículos</h3>
+                            <p id="total-vehiculos">0</p>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Botones de acción -->
                 <div class="action-buttons">
-                    <button class="btn-primary">
+                    <button class="btn-primary" onclick="mostrarModalVehiculo()">
                         <i class="fas fa-plus"></i> Agregar Vehículo
                     </button>
                     <button class="btn-secondary">
@@ -69,45 +80,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>TX001</td>
-                                <td>ABC-123</td>
-                                <td>Toyota Corolla</td>
-                                <td>2020</td>
-                                <td><span class="status active">Activo</span></td>
-                                <td>Juan Pérez</td>
-                                <td>15/03/2024</td>
-                                <td>
-                                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                    <button class="btn-icon"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>TX002</td>
-                                <td>XYZ-789</td>
-                                <td>Hyundai Elantra</td>
-                                <td>2021</td>
-                                <td><span class="status maintenance">En Mantenimiento</span></td>
-                                <td>María García</td>
-                                <td>20/03/2024</td>
-                                <td>
-                                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                    <button class="btn-icon"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>TX003</td>
-                                <td>DEF-456</td>
-                                <td>Nissan Sentra</td>
-                                <td>2019</td>
-                                <td><span class="status inactive">Inactivo</span></td>
-                                <td>No asignado</td>
-                                <td>10/03/2024</td>
-                                <td>
-                                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                    <button class="btn-icon"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
+                            <!-- Los datos se cargarán dinámicamente -->
                         </tbody>
                     </table>
                 </div>
@@ -123,6 +96,54 @@
             </div>
         </main>
     </div>
+
+    <!-- Modal para agregar/editar vehículo -->
+    <div id="modal-vehiculo" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Vehículo</h2>
+                <button class="close-button" onclick="cerrarModalVehiculo()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="form-vehiculo" onsubmit="guardarVehiculo(event)">
+                <div class="form-group">
+                    <label for="vehiculo-id">ID</label>
+                    <input type="text" id="vehiculo-id" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="vehiculo-matricula">Matrícula</label>
+                    <input type="text" id="vehiculo-matricula" required>
+                </div>
+                <div class="form-group">
+                    <label for="vehiculo-modelo">Modelo</label>
+                    <input type="text" id="vehiculo-modelo" required>
+                </div>
+                <div class="form-group">
+                    <label for="vehiculo-año">Año</label>
+                    <input type="number" id="vehiculo-año" required min="2000" max="2024">
+                </div>
+                <div class="form-group">
+                    <label for="vehiculo-estado">Estado</label>
+                    <select id="vehiculo-estado" required>
+                        <option value="Activo">Activo</option>
+                        <option value="En Mantenimiento">En Mantenimiento</option>
+                        <option value="Inactivo">Inactivo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="vehiculo-conductor">Conductor</label>
+                    <input type="text" id="vehiculo-conductor">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="cerrarModalVehiculo()">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="vehiculos.js"></script>
 
     <style>
         /* Estilos específicos para la página de vehículos */
