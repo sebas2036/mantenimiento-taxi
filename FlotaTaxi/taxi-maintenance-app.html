@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaxiMaintenance - Control de Mantenimiento</title>
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>TaxiMaintenance</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar por número de taxi...">
+            <button><i class="fas fa-search"></i> Buscar</button>
+        </div>
+
+        <!-- Pestañas de navegación -->
+        <div class="nav-tabs">
+            <button class="tab-button active" data-tab="mantenimiento">
+                <i class="fas fa-tools"></i> Mantenimiento
+            </button>
+            <button class="tab-button" data-tab="seguros">
+                <i class="fas fa-shield-alt"></i> Seguros
+            </button>
+        </div>
+
+        <!-- Contenido de las pestañas -->
+        <div class="tab-content">
+            <!-- Panel de Mantenimiento -->
+            <div class="tab-panel active" id="mantenimientoPanel">
+                <div class="taxi-grid" id="taxiGrid">
+                    <div class="taxi-card" data-taxi-id="TX-1001">
+                        <div class="taxi-number">TX-1001</div>
+                        <span class="taxi-status status-ok">OK</span>
+                    </div>
+                    <div class="taxi-card" data-taxi-id="TX-1002">
+                        <div class="taxi-number">TX-1002</div>
+                        <span class="taxi-status status-warning">Revisión</span>
+                    </div>
+                    <div class="taxi-card" data-taxi-id="TX-1003">
+                        <div class="taxi-number">TX-1003</div>
+                        <span class="taxi-status status-danger">Urgente</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel de Seguros -->
+            <div class="tab-panel" id="segurosPanel">
+                <!-- Filtros de seguros -->
+                <div class="seguros-filtros">
+                    <div class="filtro-grupo">
+                        <label>Estado:</label>
+                        <select id="filtroEstado">
+                            <option value="todos">Todos</option>
+                            <option value="activo">Activos</option>
+                            <option value="proximo">Próximos a vencer</option>
+                            <option value="vencido">Vencidos</option>
+                        </select>
+                    </div>
+                    <div class="filtro-grupo">
+                        <label>Tipo:</label>
+                        <select id="filtroTipo">
+                            <option value="todos">Todos</option>
+                            <option value="obligatorio">Obligatorio</option>
+                            <option value="todo-riesgo">Todo Riesgo</option>
+                            <option value="responsabilidad">Responsabilidad Civil</option>
+                        </select>
+                    </div>
+                    <button class="btn-agregar-seguro">
+                        <i class="fas fa-plus"></i> Nuevo Seguro
+                    </button>
+                </div>
+
+                <div class="seguros-grid">
+                    <!-- Las tarjetas de seguros se generarán dinámicamente aquí -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel de detalles -->
+    <div class="detail-panel" id="detailPanel">
+        <div class="detail-header">
+            <h2>Detalles del Taxi <span id="taxi-id"></span></h2>
+            <button class="close-btn" onclick="closeDetailPanel()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="detail-content">
+            <div class="detail-section">
+                <h3>Información General</h3>
+                <div id="taxiInfo"></div>
+            </div>
+            <div class="detail-section">
+                <h3>Historial de Mantenimiento</h3>
+                <div class="maintenance-chart">
+                    <div class="chart-bars" id="maintenanceChart"></div>
+                </div>
+            </div>
+            <div class="maintenance-buttons">
+                <button class="maintenance-button primary-button">
+                    <i class="fas fa-tools"></i> Programar Mantenimiento
+                </button>
+                <button class="maintenance-button secondary-button">
+                    <i class="fas fa-history"></i> Ver Historial Completo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script src="src/js/main.js"></script>
+</body>
+</html> 
